@@ -1,8 +1,8 @@
-export default function Home() {
+export default function Projects() {
   return (
     <>
       <main className="container px-36">
-        <h1>HomePage</h1>
+        <h1>Projects</h1>
       </main>
     </>
   );
