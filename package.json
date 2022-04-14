@@ -6,10 +6,12 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "ts-generate": "cf-content-types-generator -s <space_id> -t <content_management_token>"
   },
   "dependencies": {
     "clsx": "^1.1.1",
+    "contentful": "10.0.0-beta-v10.3",
     "next": "12.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
@@ -20,6 +22,7 @@
     "@types/node": "^17.0.23",
     "@types/react": "^17.0.43",
     "autoprefixer": "^10.4.4",
+    "cf-content-types-generator": "^2.0.1",
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.1",
     "postcss": "^8.4.12",

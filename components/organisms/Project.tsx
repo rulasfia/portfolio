@@ -1,28 +1,30 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import placeholderImg from '../../public/img/post-placeholder.png';
+import dumbImg from '../../public/img/post-placeholder.png';
 import { rgbDataURL } from '../../utils/formatImage';
 
 interface Props {
   title: string;
   description: string;
   imgUrl?: string | null;
-  workingDate: string;
+  startDate: string;
+  endDate?: string;
 }
 
 export default function Project({
   title,
   description,
   imgUrl,
-  workingDate,
+  startDate,
+  endDate,
 }: Props) {
   const { pathname } = useRouter();
 
   return (
-    <div className="rounded-lg outline outline-1 outline-offset-0 outline-primary-300 ring-2 ring-transparent ring-offset-1 ring-offset-transparent transition duration-75 hover:cursor-pointer hover:outline-accent-500 hover:ring-accent-500 dark:outline-primary-600">
+    <div className="h-full rounded-lg outline outline-1 outline-offset-0 outline-primary-300 ring-2 ring-transparent ring-offset-1 ring-offset-transparent transition duration-75 hover:cursor-pointer hover:outline-accent-500 hover:ring-accent-500 dark:outline-primary-600">
       <Image
-        src={imgUrl || placeholderImg}
-        alt="post-header-image"
+        src={`https:${imgUrl}?fm=jpg&fl=progressive&w=540&h=360` || dumbImg}
+        alt={title}
         height={pathname === '/projects' ? 120 : 90}
         width={180}
         className="rounded-t-lg"
@@ -33,7 +35,9 @@ export default function Project({
       />
       <div className="m-2 bg-primary-100 p-4 text-primary-800 dark:bg-primary-800 dark:text-primary-100">
         <p className="mb-1 text-sm font-semibold uppercase text-accent-600">
-          {workingDate}
+          {new Date(startDate).toLocaleDateString() +
+            ' - ' +
+            (endDate ? new Date(endDate).toLocaleDateString() : 'In Progress')}
         </p>
         <h1 className=" mb-2 text-xl font-bold">{title}</h1>
         <p className="text-sm text-primary-700 dark:text-primary-300">
