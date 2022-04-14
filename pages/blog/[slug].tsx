@@ -27,7 +27,7 @@ export async function getStaticPaths() {
 
   const paths = blogs.map((item) => ({ params: { slug: item.fields.slug } }));
 
-  console.log({ totalpaths: paths.length });
+  console.log({ totalblog: paths.length });
   return {
     paths: paths,
     fallback: false,
