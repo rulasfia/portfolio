@@ -8,12 +8,12 @@ import { rgbDataURL } from '../../utils/formatImage';
 import type { GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import type {
-  TypeBlogPost,
-  TypeBlogPostFields,
+  TypeProjects,
+  TypeProjectsFields,
 } from '../../types/responseTypes';
 
 interface Props {
-  blog: TypeBlogPost;
+  project: TypeProjects;
 }
 
 interface IParams extends ParsedUrlQuery {
@@ -21,13 +21,15 @@ interface IParams extends ParsedUrlQuery {
 }
 
 export async function getStaticPaths() {
-  const { items: blogs } = await client.getEntries<TypeBlogPostFields>({
-    content_type: 'blogPost',
+  const { items: projects } = await client.getEntries<TypeProjectsFields>({
+    content_type: 'projects',
   });
 
-  const paths = blogs.map((item) => ({ params: { slug: item.fields.slug } }));
+  const paths = projects.map((item) => ({
+    params: { slug: item.fields.slug },
+  }));
 
-  console.log({ totalblog: paths.length });
+  console.log({ totalprojects: paths.length });
   return {
     paths: paths,
     fallback: false,
@@ -37,27 +39,31 @@ export async function getStaticPaths() {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
 
-  const { items: blogs } = await client.getEntries<TypeBlogPostFields>({
-    content_type: 'blogPost',
+  const { items: projects } = await client.getEntries<TypeProjectsFields>({
+    content_type: 'projects',
     limit: 1,
     'fields.slug': slug,
   });
 
   return {
-    props: { blog: blogs[0] },
+    props: { project: projects[0] },
   };
 };
 
-export default function BlogPostDetails({ blog }: Props) {
+export default function ProjectDetails({ project }: Props) {
   return (
     <>
       <main className="container mx-auto px-8 md:px-24 lg:px-36">
         <section className="border-b border-primary-300 py-8 dark:border-primary-700">
           <article className="prose prose-neutral mx-auto dark:prose-invert">
             <p className="mb-1 text-sm font-semibold uppercase text-accent-600">
-              {new Date(blog.fields.publishDate).toLocaleDateString()}
+              {new Date(project.fields.startDate).toLocaleDateString() +
+                ' - ' +
+                (project.fields.endDate
+                  ? new Date(project.fields.endDate).toLocaleDateString()
+                  : 'In Progress')}
             </p>
-            <h1 className="mb-3 text-3xl font-bold">{blog.fields.title}</h1>
+            <h1 className="mb-3 text-3xl font-bold">{project.fields.title}</h1>
             <div className="mb-6 flex flex-row items-center justify-between">
               <span>Khoirul Asfian</span>
               <span>1240 word</span>
@@ -67,10 +73,10 @@ export default function BlogPostDetails({ blog }: Props) {
 
             <Image
               src={
-                `https:${blog.fields.heroImage.fields.file.url}?fm=jpg&fl=progressive&w=640&h=360` ||
+                `https:${project.fields.heroImage.fields.file.url}?fm=jpg&fl=progressive&w=640&h=360` ||
                 placeholderImg
               }
-              alt={blog.fields.title}
+              alt={project.fields.title}
               className="rounded-xl"
               width={320}
               height={180}
@@ -79,13 +85,13 @@ export default function BlogPostDetails({ blog }: Props) {
               layout="responsive"
               placeholder="blur"
               blurDataURL={
-                blog.fields.heroImage.fields.file.url
+                project.fields.heroImage.fields.file.url
                   ? rgbDataURL(220, 220, 220)
                   : ''
               }
             />
             <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {blog.fields.body}
+              {project.fields.body}
             </ReactMarkdown>
           </article>
         </section>
