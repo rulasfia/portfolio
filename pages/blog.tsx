@@ -4,16 +4,15 @@ import SearchBar from '../components/molecules/SearchBar';
 import Post from '../components/organisms/Post';
 
 import type { GetStaticProps } from 'next';
-import type { TypeBlogPost } from '../types/responseTypes';
+import type { TypeBlogPost, TypeBlogPostFields } from '../types/responseTypes';
 
 interface Props {
   blogs: TypeBlogPost[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { items: blogs } = await client.getEntries<TypeBlogPost>({
+  const { items: blogs } = await client.getEntries<TypeBlogPostFields>({
     content_type: 'blogPost',
-    limit: 3,
   });
 
   return {

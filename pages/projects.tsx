@@ -4,16 +4,15 @@ import SearchBar from '../components/molecules/SearchBar';
 import Project from '../components/organisms/Project';
 
 import type { GetStaticProps } from 'next';
-import type { TypeProjects } from '../types/responseTypes';
+import type { TypeProjects, TypeProjectsFields } from '../types/responseTypes';
 
 interface Props {
   projects: TypeProjects[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { items: projects } = await client.getEntries<TypeProjects>({
+  const { items: projects } = await client.getEntries<TypeProjectsFields>({
     content_type: 'projects',
-    limit: 3,
   });
 
   return {
