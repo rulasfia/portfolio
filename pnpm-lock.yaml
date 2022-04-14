@@ -31,6 +31,7 @@ dependencies:
   react-dom: 18.0.0_react@18.0.0
   react-markdown: 8.0.2_00a11a054056e3746b551a83b9229751
   remark-gfm: 3.0.1
+  zustand: 3.7.1_react@18.0.0
 
 devDependencies:
   '@tailwindcss/forms': 0.5.0_tailwindcss@3.0.23
@@ -46,7 +47,6 @@ devDependencies:
   prettier-plugin-tailwindcss: 0.1.8_prettier@2.6.1
   tailwindcss: 3.0.23_autoprefixer@10.4.4
   typescript: 4.6.3
-  zustand: 3.7.1_react@18.0.0
 
 packages:
 
@@ -4509,7 +4509,7 @@ packages:
         optional: true
     dependencies:
       react: 18.0.0
-    dev: true
+    dev: false
 
   /zwitch/2.0.2:
     resolution: {integrity: sha512-JZxotl7SxAJH0j7dN4pxsTV6ZLXoLdGME+PsjkL/DaBrVryK9kTGq06GfKrwcSOqypP+fdXGoCHE36b99fWVoA==}
