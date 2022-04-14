@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
-import Link from '../../atoms/Link';
+import LinkTo from '../../atoms/LinkTo';
 
 interface Props {
   to: string;
@@ -11,8 +11,14 @@ export default function NavLink({ to, children }: Props) {
   const { pathname } = useRouter();
 
   return (
-    <Link to={to} className={clsx(pathname === to && 'text-accent-500')}>
+    <LinkTo
+      to={to}
+      className={clsx(
+        pathname === to && 'text-accent-500',
+        'transition duration-75 hover:text-white'
+      )}
+    >
       {children}
-    </Link>
+    </LinkTo>
   );
 }
