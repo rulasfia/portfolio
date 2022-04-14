@@ -37,7 +37,10 @@ export default function Home({ blogs, projects }: Props) {
           <div className="w-full md:w-3/5">
             {/* titile & subtitle */}
             <h1 className="mb-4 text-5xl font-bold tracking-wide">
-              Hi!, I am Khoirul Asfian
+              Hi!, I am{' '}
+              <span className="text-accent-600 dark:text-accent-500">
+                Khoirul Asfian
+              </span>
             </h1>
             <h3 className="mb-6 text-xl font-normal">
               I&apos;m a fullstack web developer working on Node.js & React

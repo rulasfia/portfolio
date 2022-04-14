@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="container sticky top-0 z-10 mx-auto mb-4 flex h-24 items-center border-b border-primary-300 bg-primary-100 bg-opacity-70 px-8 backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 dark:border-primary-700 dark:bg-primary-800 md:px-24 lg:px-36">
+      <header className="container sticky top-0 z-10 mx-auto flex h-24 items-center border-b border-primary-300 bg-primary-100 bg-opacity-70 px-8 backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 dark:border-primary-700 dark:bg-primary-800 dark:bg-opacity-70 md:px-24 lg:px-36">
         <div className="flex w-full flex-row items-center justify-between">
           <LinkTo
             to="/"
@@ -49,7 +49,7 @@ export default function Header() {
       <section
         className={clsx(
           hidden ? 'hidden' : 'flex',
-          'absolute z-10 h-fit w-full flex-col items-center gap-6 border-b border-primary-300 bg-primary-100 pb-6 pt-4 font-medium dark:border-primary-600 dark:bg-primary-800 md:hidden md:flex-row'
+          'sticky top-24 z-10 w-full flex-col items-center gap-6 border-b border-t-2 border-primary-300 bg-primary-100 bg-opacity-70 pb-6 pt-4 font-medium backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 dark:border-primary-600 dark:bg-primary-800 dark:bg-opacity-70 md:hidden md:flex-row'
         )}
       >
         {HeaderLinks.map(({ label, slug }) => (
