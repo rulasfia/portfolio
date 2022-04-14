@@ -14,8 +14,10 @@ export default function NavLink({ to, children }: Props) {
     <LinkTo
       to={to}
       className={clsx(
-        pathname === to && 'text-accent-500',
-        'transition duration-75 hover:text-white'
+        pathname === to
+          ? 'text-accent-500 hover:text-accent-400'
+          : 'hover:text-white',
+        'transition duration-75'
       )}
     >
       {children}

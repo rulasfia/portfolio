@@ -1,3 +1,4 @@
+import LinkTo from '../atoms/LinkTo';
 import NavLink from '../molecules/Header/NavLink';
 import ThemeIcon from '../molecules/ThemeIcon';
 
@@ -11,7 +12,9 @@ const HeaderLinks = [
 export default function Header() {
   return (
     <header className="container sticky top-0 z-10 mx-auto mb-4 flex h-24 flex-row items-center justify-between border-b border-primary-700 bg-primary-800 bg-opacity-70 px-36 backdrop-blur-lg backdrop-filter firefox:bg-opacity-90">
-      <h1 className="text-2xl font-bold">Khoirul Asfian</h1>
+      <LinkTo to="/" className="cursor-pointer hover:text-white">
+        <h2 className="text-xl font-bold">rulasfia</h2>
+      </LinkTo>
 
       <section className="flex flex-row items-center gap-6 font-medium">
         {HeaderLinks.map(({ label, slug }) => (

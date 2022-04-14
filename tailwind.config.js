@@ -27,6 +27,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'),
     require('@tailwindcss/forms'),
     // blur navbar alternative for firefox
     plugin(function ({ addVariant, e, postcss }) {
