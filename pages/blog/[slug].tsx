@@ -30,7 +30,7 @@ export async function getStaticPaths() {
   console.log({ totalpaths: paths.length });
   return {
     paths: paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
