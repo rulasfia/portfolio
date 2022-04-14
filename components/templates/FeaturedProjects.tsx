@@ -15,8 +15,8 @@ export default function FeaturedProjects({ data }: Props) {
       <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {data.slice(0, 3).map((item) => (
           <LinkTo
-            to={`/blog/${item.fields.slug}`}
-            key={`/blog/${item.fields.slug}`}
+            to={`/projects/${item.fields.slug}`}
+            key={`/projects/${item.fields.slug}`}
             className=""
           >
             <Project

@@ -1,9 +1,27 @@
+import { client } from '../utils/contentfulClient';
 import LinkTo from '../components/atoms/LinkTo';
 import SearchBar from '../components/molecules/SearchBar';
 import Project from '../components/organisms/Project';
-import { ProjectsMock } from '../utils/constant';
 
-export default function Projects() {
+import type { GetStaticProps } from 'next';
+import type { TypeProjects } from '../types/responseTypes';
+
+interface Props {
+  projects: TypeProjects[];
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { items: projects } = await client.getEntries<TypeProjects>({
+    content_type: 'projects',
+    limit: 3,
+  });
+
+  return {
+    props: { projects },
+  };
+};
+
+export default function Projects({ projects }: Props) {
   return (
     <>
       <main className="container mx-auto px-8 md:px-24 lg:px-36">
@@ -15,13 +33,19 @@ export default function Projects() {
           </div>
 
           <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {ProjectsMock.map((item) => (
+            {projects.map((item) => (
               <LinkTo
-                to={`/blog/${item.id}`}
-                key={`/blog/${item.id}`}
+                to={`/projects/${item.fields.slug}`}
+                key={`/projects/${item.fields.slug}`}
                 className=""
               >
-                <Project {...item} />
+                <Project
+                  title={item.fields.title}
+                  description={item.fields.description}
+                  imgUrl={item.fields.heroImage.fields.file.url}
+                  startDate={item.fields.startDate}
+                  endDate={item.fields.endDate}
+                />
               </LinkTo>
             ))}
           </div>

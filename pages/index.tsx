@@ -1,14 +1,12 @@
-import { createClient } from 'contentful';
+import { client } from '../utils/contentfulClient';
 import LinkTo from '../components/atoms/LinkTo';
 import Button from '../components/atoms/Button';
 import SocialLinks from '../components/molecules/SocialLinks';
-import Post from '../components/organisms/Post';
-import Project from '../components/organisms/Project';
-import { BlogMock, ProjectsMock } from '../utils/constant';
-import type { GetStaticProps } from 'next';
-import type { TypeBlogPost, TypeProjects } from '../types/responseTypes';
 import FeaturedPosts from '../components/templates/FeaturedPosts';
 import FeaturedProjects from '../components/templates/FeaturedProjects';
+
+import type { GetStaticProps } from 'next';
+import type { TypeBlogPost, TypeProjects } from '../types/responseTypes';
 
 interface Props {
   blogs: TypeBlogPost[];
@@ -16,17 +14,12 @@ interface Props {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const client = createClient({
-    space: process.env.CONTENTFUL_SPACE_ID as string,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN as string,
-  });
-
   const { items: blogs } = await client.getEntries<TypeBlogPost>({
     content_type: 'blogPost',
     limit: 3,
   });
 
-  const { items: projects } = await client.getEntries<TypeBlogPost>({
+  const { items: projects } = await client.getEntries<TypeProjects>({
     content_type: 'projects',
     limit: 3,
   });
