@@ -11,7 +11,7 @@ export default function Projects() {
           <h2 className="mb-6 text-3xl font-bold">Projects</h2>
 
           <div className="my-6">
-            <SearchBar id="projects-search" />
+            <SearchBar id="projects-search" placeholder="search projects" />
           </div>
 
           <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

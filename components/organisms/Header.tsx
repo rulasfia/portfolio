@@ -23,10 +23,13 @@ export default function Header() {
             <h2 className="text-xl font-bold">rulasfia</h2>
           </LinkTo>
 
+          {/* menu icon for mobile */}
           <MenuIcon
             onClick={() => setHidden((currentState) => !currentState)}
             className="block h-8 w-8 md:hidden"
           />
+
+          {/* desktop menu navigation */}
           <section className="hidden flex-row items-center gap-6 font-medium md:flex">
             {HeaderLinks.map(({ label, slug }) => (
               <NavLink to={slug} key={slug}>
@@ -39,6 +42,7 @@ export default function Header() {
         </div>
       </header>
 
+      {/* mobile menu navigation */}
       <section
         className={clsx(
           hidden ? 'hidden' : 'flex',

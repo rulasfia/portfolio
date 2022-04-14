@@ -19,7 +19,7 @@ export default function Project({
   const { pathname } = useRouter();
 
   return (
-    <div className="rounded-lg outline outline-1 outline-offset-0 outline-primary-300 ring-2 ring-transparent ring-offset-1 ring-offset-transparent transition duration-75 hover:cursor-pointer hover:outline-accent-500 hover:ring-accent-500">
+    <div className="rounded-lg outline outline-1 outline-offset-0 outline-primary-600 ring-2 ring-transparent ring-offset-1 ring-offset-transparent transition duration-75 hover:cursor-pointer hover:outline-accent-500 hover:ring-accent-500">
       <Image
         src={imgUrl || placeholderImg}
         alt="post-header-image"

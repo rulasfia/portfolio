@@ -11,7 +11,7 @@ export default function Blog() {
           <h2 className="mb-6 text-3xl font-bold">Blog Posts</h2>
 
           <div className="my-6">
-            <SearchBar id="blog-search" />
+            <SearchBar id="blog-search" placeholder="search articles" />
           </div>
 
           <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
