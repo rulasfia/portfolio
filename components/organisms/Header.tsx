@@ -19,7 +19,10 @@ export default function Header() {
     <>
       <header className="container sticky top-0 z-10 mx-auto mb-4 flex h-24 items-center border-b border-primary-300 bg-primary-100 bg-opacity-70 px-8 backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 dark:border-primary-700 dark:bg-primary-800 md:px-24 lg:px-36">
         <div className="flex w-full flex-row items-center justify-between">
-          <LinkTo to="/" className="cursor-pointer hover:text-white">
+          <LinkTo
+            to="/"
+            className="cursor-pointer hover:text-black dark:hover:text-white"
+          >
             <h2 className="text-xl font-bold">rulasfia</h2>
           </LinkTo>
 
@@ -46,7 +49,7 @@ export default function Header() {
       <section
         className={clsx(
           hidden ? 'hidden' : 'flex',
-          'absolute z-10 h-fit w-full flex-col items-center gap-6 border-b border-primary-600 bg-primary-800 pb-6 pt-4 font-medium duration-300 md:hidden md:flex-row'
+          'absolute z-10 h-fit w-full flex-col items-center gap-6 border-b border-primary-300 bg-primary-100 pb-6 pt-4 font-medium dark:border-primary-600 dark:bg-primary-800 md:hidden md:flex-row'
         )}
       >
         {HeaderLinks.map(({ label, slug }) => (
