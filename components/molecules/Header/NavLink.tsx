@@ -15,8 +15,8 @@ export default function NavLink({ to, children }: Props) {
       to={to}
       className={clsx(
         pathname === to
-          ? 'text-accent-500 hover:text-accent-400'
-          : 'hover:text-white',
+          ? 'text-accent-600 hover:text-accent-500 dark:text-accent-500 dark:hover:text-accent-400'
+          : 'hover:text-primary-500 dark:hover:text-white',
         'transition duration-75'
       )}
     >

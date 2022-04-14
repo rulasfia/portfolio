@@ -9,7 +9,7 @@ export default function BlogPostDetails() {
   return (
     <>
       <main className="container mx-auto px-8 md:px-24 lg:px-36">
-        <section className="border-b border-primary-700 py-8">
+        <section className="border-b border-primary-300 py-8 dark:border-primary-700">
           <article className="prose prose-neutral mx-auto dark:prose-invert">
             <p className="mb-1 text-sm font-semibold uppercase text-accent-600">
               24 April 2022
@@ -20,7 +20,7 @@ export default function BlogPostDetails() {
               <span>1240 word</span>
             </div>
 
-            <div className="mb-6 border-b border-primary-700" />
+            <div className="mb-6 border-b border-primary-300 dark:border-primary-700" />
 
             <Image
               src={placeholderImg}

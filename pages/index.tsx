@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <main className="container mx-auto px-8 md:px-24 lg:px-36">
-        <section className="flex min-h-[50vh] w-full flex-col items-center justify-center border-b border-primary-700 py-12 md:min-h-[80vh] md:flex-row md:justify-between">
+        <section className="flex min-h-[50vh] w-full flex-col items-center justify-center border-b border-primary-300 py-12 dark:border-primary-700 md:min-h-[80vh] md:flex-row md:justify-between">
           <div className="w-full md:w-3/5">
             {/* titile & subtitle */}
             <h1 className="mb-4 text-5xl font-bold tracking-wide">
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-b border-primary-700 py-16">
+        <section className="border-b border-primary-300 py-16 dark:border-primary-700">
           <h2 className="mb-6 text-3xl font-bold">Featured Posts</h2>
 
           <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -53,7 +53,7 @@ export default function Home() {
           </LinkTo>
         </section>
 
-        <section className="border-b border-primary-700 py-16">
+        <section className="border-b border-primary-300 py-16 dark:border-primary-700">
           <h2 className="mb-6 text-3xl font-bold">Featured Projects</h2>
 
           <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

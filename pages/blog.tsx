@@ -7,7 +7,7 @@ export default function Blog() {
   return (
     <>
       <main className="container mx-auto px-8 md:px-24 lg:px-36">
-        <section className="border-b border-primary-700 py-8">
+        <section className="border-b border-primary-300 py-8 dark:border-primary-700">
           <h2 className="mb-6 text-3xl font-bold">Blog Posts</h2>
 
           <div className="my-6">
