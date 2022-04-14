@@ -64,3 +64,70 @@ export const BlogMock = [
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero iste recusandae ex pariatur nemo molestiae, sunt provident qui',
   },
 ];
+
+export const ProjectsMock = [
+  {
+    id: 1,
+    title: 'This Is Project Title',
+    imgUrl: '/img/post-placeholder.png',
+    workingDate: 'January - April 2022',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero nemo molestiae, sunt provident qui',
+  },
+  {
+    id: 2,
+    title: 'This Is Project Title',
+    imgUrl: '/img/post-placeholder.png',
+    workingDate: 'January - April 2022',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero nemo molestiae, sunt provident qui',
+  },
+  {
+    id: 3,
+    title: 'This Is Project Title',
+    imgUrl: '/img/post-placeholder.png',
+    workingDate: 'January - April 2022',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero nemo molestiae, sunt provident qui',
+  },
+  {
+    id: 4,
+    title: 'This Is Project Title',
+    imgUrl: '/img/post-placeholder.png',
+    workingDate: 'January - April 2022',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero nemo molestiae, sunt provident qui',
+  },
+  {
+    id: 5,
+    title: 'This Is Project Title',
+    imgUrl: '/img/post-placeholder.png',
+    workingDate: 'January - April 2022',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero nemo molestiae, sunt provident qui',
+  },
+  {
+    id: 6,
+    title: 'This Is Project Title',
+    imgUrl: '/img/post-placeholder.png',
+    workingDate: 'January - April 2022',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero nemo molestiae, sunt provident qui',
+  },
+  {
+    id: 7,
+    title: 'This Is Project Title',
+    imgUrl: '/img/post-placeholder.png',
+    workingDate: 'January - April 2022',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero nemo molestiae, sunt provident qui',
+  },
+  {
+    id: 8,
+    title: 'This Is Project Title',
+    imgUrl: '/img/post-placeholder.png',
+    workingDate: 'January - April 2022',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur at deleniti a obcaecati veritatis libero nemo molestiae, sunt provident qui',
+  },
+];

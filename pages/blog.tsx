@@ -16,7 +16,11 @@ export default function Blog() {
 
           <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {BlogMock.map((item) => (
-              <LinkTo to={`/blog/${item.id}`} key={item.id} className="">
+              <LinkTo
+                to={`/blog/${item.id}`}
+                key={`/blog/${item.id}`}
+                className=""
+              >
                 <Post {...item} />
               </LinkTo>
             ))}

@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <>
-      <main className="container mx-auto px-36">
+      <main className="container mx-auto min-h-[100vh] px-36">
         <h1>About</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque cumque

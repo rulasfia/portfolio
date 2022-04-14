@@ -10,7 +10,7 @@ const HeaderLinks = [
 
 export default function Header() {
   return (
-    <header className="container sticky top-0 z-10 mx-auto mb-4 flex h-24 flex-row items-center justify-between border-b border-primary-700 bg-primary-800 bg-opacity-40 px-36 backdrop-blur-lg backdrop-filter firefox:bg-opacity-90">
+    <header className="container sticky top-0 z-10 mx-auto mb-4 flex h-24 flex-row items-center justify-between border-b border-primary-700 bg-primary-800 bg-opacity-70 px-36 backdrop-blur-lg backdrop-filter firefox:bg-opacity-90">
       <h1 className="text-2xl font-bold">Khoirul Asfian</h1>
 
       <section className="flex flex-row items-center gap-6 font-medium">
