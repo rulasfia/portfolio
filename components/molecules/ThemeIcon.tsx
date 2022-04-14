@@ -1,4 +1,4 @@
-import SunIcon from '../atoms/SunIcon';
+import SunIcon from '../atoms/Icon/SunIcon';
 
 export default function ThemeIcon() {
   return (
