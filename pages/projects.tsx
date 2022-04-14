@@ -6,7 +6,7 @@ import { ProjectsMock } from '../utils/constant';
 export default function Projects() {
   return (
     <>
-      <main className="container mx-auto px-36">
+      <main className="container mx-auto px-8 md:px-24 lg:px-36">
         <section className="border-b border-primary-700 py-8">
           <h2 className="mb-6 text-3xl font-bold">Projects</h2>
 

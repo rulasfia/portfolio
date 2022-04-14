@@ -9,9 +9,9 @@ import { BlogMock, ProjectsMock } from '../utils/constant';
 export default function Home() {
   return (
     <>
-      <main className="container mx-auto px-36">
-        <section className="flex min-h-[80vh] w-full flex-row items-center justify-between border-b border-primary-700 py-12">
-          <div className="w-3/5">
+      <main className="container mx-auto px-8 md:px-24 lg:px-36">
+        <section className="flex min-h-[50vh] w-full flex-col items-center justify-center border-b border-primary-700 py-12 md:min-h-[80vh] md:flex-row md:justify-between">
+          <div className="w-full md:w-3/5">
             {/* titile & subtitle */}
             <h1 className="mb-4 text-5xl font-bold tracking-wide">
               Hi!, I am Khoirul Asfian
@@ -72,9 +72,6 @@ export default function Home() {
             <Button arrowRight>View all projects</Button>
           </LinkTo>
         </section>
-
-        <br />
-        <br />
       </main>
     </>
   );
