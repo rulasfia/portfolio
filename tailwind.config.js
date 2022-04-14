@@ -7,6 +7,7 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
     colors: {
       transparent: 'transparent',
@@ -26,6 +27,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/forms'),
     // blur navbar alternative for firefox
     plugin(function ({ addVariant, e, postcss }) {
       addVariant('firefox', ({ container, separator }) => {

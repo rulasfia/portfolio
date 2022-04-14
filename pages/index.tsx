@@ -4,6 +4,7 @@ import SocialLinks from '../components/molecules/SocialLinks';
 import Image from 'next/image';
 import Post from '../components/organisms/Post';
 import Project from '../components/organisms/Project';
+import { BlogMock } from '../utils/constant';
 
 export default function Home() {
   return (
@@ -36,9 +37,9 @@ export default function Home() {
           <h2 className="mb-6 text-3xl font-bold">Featured Posts</h2>
 
           <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((item) => (
-              <LinkTo to={`/blog/${item}`} key={item} className="">
-                <Post />
+            {BlogMock.slice(0, 3).map((item) => (
+              <LinkTo to={`/blog/${item.id}`} key={item.id} className="">
+                <Post {...item} />
               </LinkTo>
             ))}
           </div>
