@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import TechStackIcons from '../components/molecules/TechStackIcons';
+import profilePic from '../public/img/asfian-avatar.jpg';
 
 export default function About() {
   return (
@@ -19,11 +20,14 @@ export default function About() {
 
             <figure className="flex flex-row items-center rounded-xl outline outline-1 outline-offset-4 outline-primary-700 transition duration-75 hover:outline-primary-300">
               <Image
-                src="/img/asfian-avatar.jpg"
+                src={profilePic}
                 alt="asfian-avatar"
                 className="rounded-xl"
                 width={400}
                 height={400}
+                style={{ borderRadius: '12px' }}
+                placeholder="blur"
+                // blurDataURL={rgbDataURL(220, 220, 220)}
               />
             </figure>
           </div>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { rgbDataURL } from '../../utils/formatImage';
 
 const FavStackIcons = [
   '/svg/react-li.svg',
@@ -24,6 +25,8 @@ export default function TechStackIcons() {
           width={64}
           objectFit="contain"
           layout="fixed"
+          placeholder="blur"
+          blurDataURL={rgbDataURL(220, 220, 220)}
         />
       ))}
     </div>
