@@ -32,7 +32,7 @@ export default function ContentBody({
 
       <Image
         src={
-          `https:${imgUrl}?fm=jpg&fl=progressive&w=640&h=360` || placeholderImg
+          `https:${imgUrl}?fm=jpg&fl=progressive&w=1280&h=720` || placeholderImg
         }
         alt={title}
         className="rounded-xl"
