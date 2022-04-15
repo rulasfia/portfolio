@@ -1,24 +1,27 @@
 import Image from 'next/image';
+import { useDarkMode } from '../../utils/darkStore';
 import { rgbDataURL } from '../../utils/formatImage';
 
 const FavStackIcons = [
-  '/svg/react-li.svg',
-  '/svg/next-li.svg',
-  '/svg/tailwind-li.svg',
-  '/svg/rq-li.svg',
-  '/svg/ts-li.svg',
-  '/svg/nodejs-li.svg',
-  '/svg/postgresql-li.svg',
-  '/svg/prisma-li.svg',
+  '/svg/react',
+  '/svg/next',
+  '/svg/tailwind',
+  '/svg/rq',
+  '/svg/ts',
+  '/svg/nodejs',
+  '/svg/postgresql',
+  '/svg/prisma',
 ];
 
 export default function TechStackIcons() {
+  const { enabled } = useDarkMode();
+
   return (
     <div className="grid grid-cols-4 gap-6">
       {FavStackIcons.map((item) => (
         <Image
           key={item}
-          src={item}
+          src={enabled ? item + '-li.svg' : item + '-da.svg'}
           className="cursor-pointer opacity-75 transition duration-75 hover:opacity-100"
           alt="react-icon"
           height={64}
