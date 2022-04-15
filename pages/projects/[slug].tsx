@@ -1,3 +1,4 @@
+import dayjs from 'dayjs';
 import { client } from '../../utils/contentfulClient';
 import ContentBody from '../../components/organisms/ContentBody';
 
@@ -54,11 +55,7 @@ export default function ProjectDetails({ project }: Props) {
         <section className="border-b border-primary-300 py-8 dark:border-primary-700">
           <article className="prose prose-neutral mx-auto dark:prose-invert">
             <p className="mb-1 text-sm font-semibold uppercase text-accent-600">
-              {new Date(project.fields.startDate).toLocaleDateString() +
-                ' - ' +
-                (project.fields.endDate
-                  ? new Date(project.fields.endDate).toLocaleDateString()
-                  : 'In Progress')}
+              {dayjs(project.fields.startDate).format('MMMM YYYY')}
             </p>
             <h1 className="mb-3 text-3xl font-bold">{project.fields.title}</h1>
             <div className="mb-6 flex flex-row items-center justify-between">

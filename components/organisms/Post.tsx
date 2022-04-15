@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import dayjs from 'dayjs';
 import { useRouter } from 'next/router';
 import dumbImg from '../../public/img/post-placeholder.png';
 import { rgbDataURL } from '../../utils/formatImage';
@@ -33,7 +34,7 @@ export default function Post({
       />
       <div className="m-2 bg-transparent p-4 text-primary-800 dark:text-primary-100">
         <p className="mb-1 text-sm font-semibold uppercase text-accent-600">
-          {new Date(publishedDate).toLocaleDateString()}
+          {dayjs(publishedDate).format('DD MMMM YYYY')}
         </p>
         <h1 className=" mb-2 text-xl font-bold">{title}</h1>
         <p className="text-sm text-primary-700 line-clamp-3 dark:text-primary-300">

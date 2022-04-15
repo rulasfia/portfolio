@@ -12,6 +12,7 @@
   "dependencies": {
     "clsx": "^1.1.1",
     "contentful": "10.0.0-beta-v10.3",
+    "dayjs": "^1.11.1",
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
