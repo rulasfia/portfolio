@@ -1,9 +1,5 @@
-import Image from 'next/image';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { client } from '../../utils/contentfulClient';
-import placeholderImg from '../../public/img/post-placeholder.png';
-import { rgbDataURL } from '../../utils/formatImage';
+import ContentBody from '../../components/organisms/ContentBody';
 
 import type { GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
@@ -11,6 +7,7 @@ import type {
   TypeProjects,
   TypeProjectsFields,
 } from '../../types/responseTypes';
+import { getWordCount } from '../../utils/formatString';
 
 interface Props {
   project: TypeProjects;
@@ -66,33 +63,18 @@ export default function ProjectDetails({ project }: Props) {
             <h1 className="mb-3 text-3xl font-bold">{project.fields.title}</h1>
             <div className="mb-6 flex flex-row items-center justify-between">
               <span>Khoirul Asfian</span>
-              <span>1240 word</span>
+              <span>{getWordCount(project.fields.body)} word</span>
             </div>
 
-            <div className="mb-6 border-b border-primary-300 dark:border-primary-700" />
-
-            <Image
-              src={
-                `https:${project.fields.heroImage.fields.file.url}?fm=jpg&fl=progressive&w=640&h=360` ||
-                placeholderImg
-              }
-              alt={project.fields.title}
-              className="rounded-xl"
-              width={320}
-              height={180}
-              style={{ borderRadius: '12px' }}
-              objectFit="cover"
-              layout="responsive"
-              placeholder="blur"
-              blurDataURL={
-                project.fields.heroImage.fields.file.url
-                  ? rgbDataURL(220, 220, 220)
-                  : ''
-              }
+            <ContentBody
+              isProject
+              title={project.fields.title}
+              body={project.fields.body}
+              imgUrl={project.fields.heroImage.fields.file.url}
+              demoUrl={project.fields.demoUrl}
+              repoUrl={project.fields.repoUrl}
+              tags={project.fields.tags}
             />
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {project.fields.body}
-            </ReactMarkdown>
           </article>
         </section>
       </main>

@@ -1,9 +1,5 @@
-import Image from 'next/image';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import { client } from '../../utils/contentfulClient';
-import placeholderImg from '../../public/img/post-placeholder.png';
-import { rgbDataURL } from '../../utils/formatImage';
+import ContentBody from '../../components/organisms/ContentBody';
 
 import type { GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
@@ -11,6 +7,7 @@ import type {
   TypeBlogPost,
   TypeBlogPostFields,
 } from '../../types/responseTypes';
+import { getWordCount } from '../../utils/formatString';
 
 interface Props {
   blog: TypeBlogPost;
@@ -60,33 +57,15 @@ export default function BlogPostDetails({ blog }: Props) {
             <h1 className="mb-3 text-3xl font-bold">{blog.fields.title}</h1>
             <div className="mb-6 flex flex-row items-center justify-between">
               <span>Khoirul Asfian</span>
-              <span>1240 word</span>
+              <span>{getWordCount(blog.fields.body)} word</span>
             </div>
 
-            <div className="mb-6 border-b border-primary-300 dark:border-primary-700" />
-
-            <Image
-              src={
-                `https:${blog.fields.heroImage.fields.file.url}?fm=jpg&fl=progressive&w=640&h=360` ||
-                placeholderImg
-              }
-              alt={blog.fields.title}
-              className="rounded-xl"
-              width={320}
-              height={180}
-              style={{ borderRadius: '12px' }}
-              objectFit="cover"
-              layout="responsive"
-              placeholder="blur"
-              blurDataURL={
-                blog.fields.heroImage.fields.file.url
-                  ? rgbDataURL(220, 220, 220)
-                  : ''
-              }
+            <ContentBody
+              title={blog.fields.title}
+              body={blog.fields.body}
+              imgUrl={blog.fields.heroImage.fields.file.url}
+              tags={blog.fields.tags}
             />
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {blog.fields.body}
-            </ReactMarkdown>
           </article>
         </section>
       </main>
