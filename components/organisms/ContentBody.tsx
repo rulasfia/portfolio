@@ -1,11 +1,10 @@
 import Image from 'next/image';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import placeholderImg from '../../public/img/post-placeholder.png';
 import { rgbDataURL } from '../../utils/formatImage';
-import { formatSlug } from '../../utils/formatString';
 import Button from '../atoms/Button';
-import LinkTo from '../atoms/LinkTo';
+import MarkdownComponents from '../molecules/MarkdownComponent';
+import ProjectLink from '../molecules/ProjectLink';
+import Tags from '../molecules/Tags';
 
 interface Props {
   imgUrl?: string;
@@ -35,52 +34,19 @@ export default function ContentBody({
           `https:${imgUrl}?fm=jpg&fl=progressive&w=1280&h=720` || placeholderImg
         }
         alt={title}
-        className="rounded-xl"
-        width={320}
-        height={180}
-        style={{ borderRadius: '12px' }}
+        className="rounded-md"
+        width={640}
+        height={360}
         objectFit="cover"
         layout="responsive"
         placeholder="blur"
         blurDataURL={imgUrl ? rgbDataURL(220, 220, 220) : ''}
       />
-      {tags ? (
-        <div className="mt-4 flex flex-row gap-4">
-          {tags.map((item) => (
-            <LinkTo to={formatSlug(item)} key={item} className="">
-              <Button tags>{item}</Button>
-            </LinkTo>
-          ))}
-        </div>
-      ) : (
-        <Button tags>Not Available</Button>
-      )}
 
-      {isProject && (
-        <ul className="mt-4">
-          <li>
-            Project Repo:{' '}
-            {repoUrl ? (
-              <LinkTo to={repoUrl} blank className="">
-                Click here
-              </LinkTo>
-            ) : (
-              'Not Available'
-            )}
-          </li>
-          <li>
-            Project Demo:{' '}
-            {demoUrl ? (
-              <LinkTo to={demoUrl} blank className="">
-                Click here
-              </LinkTo>
-            ) : (
-              'Not Available'
-            )}
-          </li>
-        </ul>
-      )}
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{body}</ReactMarkdown>
+      {tags ? <Tags tags={tags} /> : <Button tags>Not Available</Button>}
+      {isProject && <ProjectLink demoUrl={demoUrl} repoUrl={repoUrl} />}
+
+      <MarkdownComponents body={body} />
     </>
   );
 }

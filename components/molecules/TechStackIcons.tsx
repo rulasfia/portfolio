@@ -22,7 +22,7 @@ export default function TechStackIcons() {
         <Image
           key={item}
           src={enabled ? item + '-li.svg' : item + '-da.svg'}
-          className="cursor-pointer opacity-75 transition duration-75 hover:opacity-100"
+          className="opacity-75 transition duration-75 hover:opacity-100"
           alt="react-icon"
           height={64}
           width={64}

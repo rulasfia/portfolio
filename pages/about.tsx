@@ -20,11 +20,11 @@ export default function About() {
               </p>
             </article>
 
-            <figure className="flex flex-row items-center rounded-xl outline outline-1 outline-offset-4 outline-primary-400 transition duration-75 hover:outline-primary-500 dark:outline-primary-700 dark:hover:outline-primary-300">
+            <figure className="flex flex-row items-center rounded-lg outline outline-1 outline-offset-4 outline-primary-400 transition duration-75 hover:outline-primary-500 dark:outline-primary-700 dark:hover:outline-primary-300">
               <Image
                 src={profilePic}
                 alt="asfian-avatar"
-                className="rounded-xl"
+                className="rounded-lg"
                 width={400}
                 height={400}
                 style={{ borderRadius: '12px' }}
