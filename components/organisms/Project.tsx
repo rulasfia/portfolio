@@ -33,14 +33,14 @@ export default function Project({
         placeholder="blur"
         blurDataURL={imgUrl ? rgbDataURL(220, 220, 220) : ''}
       />
-      <div className="m-2 bg-primary-100 p-4 text-primary-800 dark:bg-primary-800 dark:text-primary-100">
+      <div className="m-2 bg-transparent p-4 text-primary-800 dark:text-primary-100">
         <p className="mb-1 text-sm font-semibold uppercase text-accent-600">
           {new Date(startDate).toLocaleDateString() +
             ' - ' +
             (endDate ? new Date(endDate).toLocaleDateString() : 'In Progress')}
         </p>
         <h1 className=" mb-2 text-xl font-bold">{title}</h1>
-        <p className="text-sm text-primary-700 dark:text-primary-300">
+        <p className="text-sm text-primary-700 line-clamp-3 dark:text-primary-300">
           {description}
         </p>
       </div>

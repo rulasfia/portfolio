@@ -3,19 +3,19 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import Footer from '../components/organisms/Footer';
 import Header from '../components/organisms/Header';
-import { useDarkMode } from '../utils/darkStore';
+import { useTheme } from '../utils/useTheme';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { enabled } = useDarkMode();
+  const darkEnabled = useTheme();
 
   return (
     <div
       className={clsx(
-        enabled
-          ? 'dark bg-primary-800 text-white text-opacity-90'
-          : 'bg-primary-100 text-primary-900',
-        'font-sans antialiased'
+        darkEnabled
+          ? 'dark bg-gradient-to-b from-primary-800 to-[#101010] text-white text-opacity-90'
+          : 'bg-gradient-to-b from-primary-100 to-white text-primary-900',
+        'scroll-smooth font-sans antialiased'
       )}
     >
       <Head>
