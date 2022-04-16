@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="container sticky top-0 z-10 mx-auto flex h-24 items-center border-b border-primary-300 bg-primary-100 bg-opacity-70 px-8 backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 dark:border-primary-700 dark:bg-primary-800 dark:bg-opacity-70 md:px-24 lg:px-36">
+      <header className="container sticky top-0 z-10 mx-auto flex h-24 items-center border-b border-primary-300 bg-primary-100 bg-opacity-70 px-8 backdrop-blur-lg backdrop-filter firefox:bg-opacity-90 dark:border-primary-700 dark:bg-primary-900 dark:bg-opacity-70 md:px-24 lg:px-36">
         <div className="flex w-full flex-row items-center justify-between">
           <LinkTo
             to="/"

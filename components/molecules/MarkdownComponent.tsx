@@ -2,15 +2,20 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { gruvboxDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import {
+  gruvboxDark,
+  gruvboxLight,
+} from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 import placeholderImg from '../../public/img/post-placeholder.png';
 import { rgbDataURL } from '../../utils/formatImage';
+import { useDarkMode } from '../../utils/darkStore';
 
 interface Props {
   body: string;
 }
 
 export default function MarkdownComponents({ body }: Props) {
+  const { enabled } = useDarkMode();
   return (
     <ReactMarkdown
       components={{
@@ -53,12 +58,12 @@ export default function MarkdownComponents({ body }: Props) {
         code: ({ className, children }) => {
           // Removing "language-" because React-Markdown already added "language-"
           if (!className) return children[0];
-          console.log({ className });
+          // console.log({ className });
           const language = className.replace('language-', '');
           return (
             <SyntaxHighlighter
               showLineNumbers
-              style={gruvboxDark}
+              style={enabled ? gruvboxDark : gruvboxLight}
               language={language}
             >
               {children[0]}

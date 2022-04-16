@@ -13,8 +13,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div
       className={clsx(
         darkEnabled
-          ? 'dark bg-gradient-to-b from-primary-800 to-[#101010] text-white text-opacity-90'
-          : 'bg-gradient-to-b from-primary-100 to-white text-primary-900',
+          ? 'dark bg-primary-900 text-white text-opacity-90'
+          : 'bg-primary-100 text-primary-800',
         'scroll-smooth font-sans antialiased'
       )}
     >
