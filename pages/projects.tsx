@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { client } from '../utils/contentfulClient';
 import LinkTo from '../components/atoms/LinkTo';
 import SearchBar from '../components/molecules/SearchBar';
@@ -23,6 +24,17 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Projects({ projects }: Props) {
   return (
     <>
+      <NextSeo
+        title="Projects - rulasfia"
+        description="List of project by Khoirul Asfian."
+        openGraph={{
+          url: 'https://www.rulasfia.tech',
+          title: 'Projects - rulasfia',
+          description: 'List of project by Khoirul Asfian.',
+          site_name: 'Khoirul Asfian Website',
+        }}
+      />
+
       <main className="container mx-auto px-8 md:px-24 lg:px-36">
         <section className="border-b border-primary-300 py-8 dark:border-primary-700">
           <h2 className="mb-6 text-3xl font-bold">Projects</h2>

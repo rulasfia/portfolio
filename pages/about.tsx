@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import TechStackIcons from '../components/molecules/TechStackIcons';
 import profilePic from '../public/img/asfian-avatar.jpg';
@@ -5,6 +6,17 @@ import profilePic from '../public/img/asfian-avatar.jpg';
 export default function About() {
   return (
     <>
+      <NextSeo
+        title="About - rulasfia"
+        description="About Khoirul Asfian."
+        openGraph={{
+          url: 'https://www.rulasfia.tech',
+          title: 'About - rulasfia',
+          description: 'About Khoirul Asfian.',
+          site_name: 'Khoirul Asfian Website',
+        }}
+      />
+
       <main className="container mx-auto min-h-screen px-8 md:px-24 lg:px-36">
         <section className="border-b border-primary-300 py-8 dark:border-primary-700">
           <h2 className="mb-6 text-3xl font-bold text-primary-900 dark:text-white">

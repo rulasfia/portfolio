@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { client } from '../utils/contentfulClient';
 import LinkTo from '../components/atoms/LinkTo';
 import Button from '../components/atoms/Button';
@@ -32,6 +33,17 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function Home({ blogs, projects }: Props) {
   return (
     <>
+      <NextSeo
+        title="Khoirul Asfian"
+        description="Khoirul personal website."
+        openGraph={{
+          url: 'https://www.rulasfia.tech',
+          title: 'Khoirul Asfian',
+          description: 'Khoirul personal website',
+          site_name: 'Khoirul Asfian Website',
+        }}
+      />
+
       <main className="container mx-auto px-8 md:px-24 lg:px-36">
         <section className="flex min-h-[50vh] w-full flex-col items-center justify-center border-b border-primary-300 py-12 dark:border-primary-700 md:min-h-[80vh] md:flex-row md:justify-between">
           <div className="w-full md:w-3/5">

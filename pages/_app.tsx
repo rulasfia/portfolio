@@ -18,11 +18,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         'scroll-smooth font-sans antialiased'
       )}
     >
-      <Head>
-        <title>Khoirul Asfian</title>
-        <meta name="description" content="Khoirul Asfian Personal Website" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Header />
       <Component {...pageProps} />
       <Footer />

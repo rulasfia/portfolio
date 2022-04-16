@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import dayjs from 'dayjs';
 import { client } from '../../utils/contentfulClient';
 import ContentBody from '../../components/organisms/ContentBody';
@@ -51,6 +52,26 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export default function ProjectDetails({ project }: Props) {
   return (
     <>
+      <NextSeo
+        title={`${project.fields.title} - rulasfia`}
+        description={`${project.fields.description} - rulasfia`}
+        openGraph={{
+          url: 'https://www.rulasfia.tech',
+          title: `${project.fields.title} - rulasfia`,
+          description: `${project.fields.description} - rulasfia`,
+          images: [
+            {
+              url: `https:${project.fields.heroImage.fields.file.url}?fm=jpg&fl=progressive&w=800&h=600`,
+              width: 800,
+              height: 600,
+              alt: 'Og Image Alt',
+              type: 'image/jpeg',
+            },
+          ],
+          site_name: 'Khoirul Asfian Website',
+        }}
+      />
+
       <main className="container mx-auto px-8 md:px-24 lg:px-36">
         <section className="border-b border-primary-300 py-8 dark:border-primary-700">
           <article className="prose prose-neutral mx-auto dark:prose-invert">
