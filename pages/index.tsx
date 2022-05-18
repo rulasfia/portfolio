@@ -55,8 +55,7 @@ export default function Home({ blogs, projects }: Props) {
               </span>
             </h1>
             <h3 className="mb-6 text-xl font-normal">
-              I&apos;m a fullstack web developer working on Node.js & React
-              ecosystem.
+              I&apos;m a frontend web developer working on React ecosystem.
             </h3>
 
             {/* link to about page */}

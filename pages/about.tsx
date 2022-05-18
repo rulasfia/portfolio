@@ -26,9 +26,11 @@ export default function About() {
           <div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:gap-2 lg:gap-0">
             <article className=" prose prose-neutral dark:prose-invert lg:w-3/5">
               <p>
-                Hi, I&apos;m Asfian, a fullstack web developer based in Jombang,
-                Indonesia. I really passionate about web development world,
-                especially in javascript ecosystem.
+                Hi, I&apos;m Asfian, a frontend web developer based in Jombang,
+                Indonesia. I really passionate about web development world &
+                technology in general, especially in javascript/typescript
+                ecosystem. Currently learning about backend stuff using node &
+                express.
               </p>
             </article>
 
