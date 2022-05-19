@@ -8,7 +8,7 @@ interface Props {
 
 export default function Tags({ tags }: Props) {
   return (
-    <div className="mt-4 flex flex-row gap-4">
+    <div className="mt-4 flex flex-row flex-wrap gap-4">
       {tags.map((item) => (
         <LinkTo to={formatSlug(item)} key={item} className="">
           <Button tags>{item}</Button>
