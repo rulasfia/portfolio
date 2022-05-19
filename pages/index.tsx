@@ -23,6 +23,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const { items: projects } = await client.getEntries<TypeProjects>({
     content_type: 'projects',
     limit: 3,
+    'fields.isFeatured': true,
   });
 
   return {
